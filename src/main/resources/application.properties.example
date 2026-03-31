@@ -1,0 +1,44 @@
+# ==========================================================
+# 1. PROJECT METADATA
+# ==========================================================
+spring.application.name=demo
+server.port=8080
+
+# ==========================================================
+# 2. DATABASE CONFIGURATION (MySQL)
+# ==========================================================
+# Replace 'YOUR_DATABASE_PASSWORD' with your local MySQL root password
+spring.datasource.url=jdbc:mysql://localhost:3306/rec_db?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=YOUR_DATABASE_PASSWORD
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# ==========================================================
+# 3. JPA / HIBERNATE SETTINGS
+# ==========================================================
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# ==========================================================
+# 4. JWT SECURITY SETTINGS
+# ==========================================================
+# Replace this with a unique 32+ character string for your own deployment
+reco.app.jwtSecret=YOUR_SECURE_RANDOM_SECRET_KEY_MIN_32_CHARS
+reco.app.jwtExpirationMs=86400000
+
+# ==========================================================
+# 5. SIMPLE AI ASSISTANT (Google AI Studio / Gemini)
+# ==========================================================
+# Get your own API Key from https://aistudio.google.com/
+spring.ai.google.genai.api-key=YOUR_GEMINI_API_KEY_HERE
+spring.ai.google.genai.chat.options.model=gemini-2.5-flash
+spring.ai.google.genai.base-url=https://generativelanguage.googleapis.com
+spring.ai.google.genai.chat.options.temperature=0.7
+
+# ==========================================================
+# 6. SECURITY & SYSTEM SETTINGS
+# ==========================================================
+spring.main.allow-bean-definition-overriding=true
+spring.ai.model.chat=google-genai
