@@ -32,7 +32,7 @@ public class SecurityConfig {
                 // 1. Configure CORS for React (Port 3000)
                 .cors(cors -> cors.configurationSource(request -> {
                     CorsConfiguration config = new CorsConfiguration();
-                    config.setAllowedOrigins(List.of("http://localhost:3000"));
+                    config.setAllowedOrigins(List.of("http://localhost:3000","reco-frontend-sigma.vercel.app"));
                     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With"));
                     config.setAllowCredentials(true);
